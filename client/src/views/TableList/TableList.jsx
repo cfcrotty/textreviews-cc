@@ -9,9 +9,9 @@ import {
   Col
 } from "reactstrap";
 
-import { PanelHeader } from "components";
+import { PanelHeader } from "react";
 
-import { thead, tbody } from "variables/general";
+import { thead, tbody } from "../../variables/general";
 
 class RegularTables extends React.Component {
   render() {

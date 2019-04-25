@@ -14,10 +14,10 @@ import Signup from './pages/Signup';
 
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.css";
-import "assets/scss/now-ui-dashboard.css";
-import "assets/css/demo.css";
-import indexRoutes from "routes/index.jsx";
+import 'bootstrap/dist/css/bootstrap.css';
+import "./assets/scss/now-ui-dashboard.css";
+import "./assets/css/demo.css";
+import indexRoutes from "./routes/index.jsx";
 //import Dashboard from "views/Dashboard/Dashboard.jsx";
 const hist = createBrowserHistory();
 

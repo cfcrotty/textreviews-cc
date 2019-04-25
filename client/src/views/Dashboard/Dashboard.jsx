@@ -17,16 +17,16 @@ import {
 import { Line, Bar } from "react-chartjs-2";
 // function that returns a color based on an interval of numbers
 
-import { PanelHeader, Stats, CardCategory, Tasks } from "components";
+import { PanelHeader, Stats, CardCategory, Tasks } from "react";
 
 import {
   dashboardPanelChart,
   dashboardShippedProductsChart,
   dashboardAllProductsChart,
   dashboard24HoursPerformanceChart
-} from "variables/charts.jsx";
+} from "../../variables/charts.jsx";
 
-import { tasks } from "variables/general.jsx";
+import { tasks } from "../../variables/general.jsx";
 
 class Dashboard extends React.Component {
   render() {
