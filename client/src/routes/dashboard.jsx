@@ -15,12 +15,12 @@ var dashRoutes = [
     icon: "files_paper",
     component: TableList
   },
-  {
-    path: "/user-page",
-    name: "User Profile",
-    icon: "users_single-02",
-    component: UserPage
-  },
-  { redirect: true, path: "/", pathTo: "/dashboard", name: "Dashboard" }
+  // {
+  //   path: "/user-page",
+  //   name: "User Profile",
+  //   icon: "users_single-02",
+  //   component: UserPage
+  // },
+  { redirect: true, path: "/", pathTo: "/", name: "Dashboard" }
 ];
 export default dashRoutes;

@@ -4,16 +4,17 @@ import './index.css';
 import App from './App';
 
 import registerServiceWorker from './registerServiceWorker';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import axios from "axios";
 
 // Our Components
 import Login from './pages/Login';
-//import Profile from './pages/Profile';
+import Profile from './pages/Profile';
 import Signup from './pages/Signup';
-// import Navbar from './components/Navbar';
+import AddLocation from './pages/AddLocation';
+import Navbar from './components/Navbar';
 
 import { createBrowserHistory } from "history";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import "./assets/scss/now-ui-dashboard.css";
 import "./assets/css/demo.css";
@@ -28,16 +29,20 @@ if(localStorage.getItem("id_token")) {
 }
 
 ReactDOM.render(
-    <Router history={hist}>
-        <Switch>
+    <Router>
+        <div>
+            <Navbar />
+            <Switch>
             <Route exact path="/" component={App} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            {/* <Route exact path="/user-page" component={Profile} /> */}
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/addlocation" component={AddLocation} />            
             {indexRoutes.map((prop, key) => {
               return <Route path={prop.path} key={key} component={prop.component} />;
             })}
-      </Switch>
+            </Switch>
+        </div>
     </Router>
     , document.getElementById('root')
 );

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import AuthService from './../components/AuthService';
 import API from './../utils/API';
-import Navbar from '../components/Navbar';
 
 class Signup extends Component {
   constructor() {
@@ -18,7 +17,8 @@ class Signup extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.signUpUser(this.state.email, this.state.password)
+    API.signUpUser(this.state.username, this.state.email, this.state.password,
+                  this.state.address, this.state.city, this.state.state, this.state.zip)
       .then(res => {
         // once the user has signed up
         // send them to the login page
@@ -36,8 +36,6 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
-      <Navbar />
       <div className="container">
 
         <h1>Signup</h1>
@@ -73,7 +71,7 @@ class Signup extends Component {
           <div className="form-group">
             <label htmlFor="street">Street Address:</label>
             <input className="form-control"
-                   placeholder="Password goes here..."
+                   placeholder="Street goes here..."
                    name="street"
                    type="text"
                    id="street"
@@ -110,7 +108,6 @@ class Signup extends Component {
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
         <p><Link to="/login">Go to Login</Link></p>
-      </div>
       </div>
     );
   }

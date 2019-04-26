@@ -49,7 +49,7 @@ class Sidebar extends Component {
             href="https://www.github.com"
             className="simple-text logo-normal"
           >
-            Text Reviews
+            Dashboard
           </a>
         </div>
         <div className="sidebar-wrapper" ref="sidebar">

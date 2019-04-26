@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import AuthService from './../components/AuthService';
 import {Link} from 'react-router-dom';
-import Navbar from '../components/Navbar';
 
 class Login extends Component {
   constructor() {
@@ -22,7 +21,7 @@ class Login extends Component {
       .then(res => {
         // once user is logged in
         // take them to their profile page
-        this.props.history.replace(`/user-page`);
+        this.props.history.replace(`/profile`);
       })
       .catch(err => {
         alert(err.response.data.message)
@@ -38,8 +37,6 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-      <Navbar />
       <div className="container">
         <h1>Login</h1>
         <form onSubmit={this.handleFormSubmit}>
@@ -65,7 +62,7 @@ class Login extends Component {
         </form>
         <p><Link to="/signup">Go to Signup</Link></p>
       </div>
-      </div>
+
     );
   }
 }

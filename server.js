@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 const morgan = require('morgan'); // used to see requests
 const PORT = process.env.PORT || 3001;
 
-
 // Setting CORS so that any website can
 // Access our API
 app.use((req, res, next) => {
@@ -27,7 +26,6 @@ mongoose
   .then(() => console.log("MongoDB Connected!"))
   .catch(err => console.error(err));
 
-
 // Error handling
 app.use(function (err, req, res, next) {
   if (err.name === 'UnauthorizedError') { // Send the error rather than to show it on the console
@@ -38,17 +36,18 @@ app.use(function (err, req, res, next) {
   }
 });
 
-
  // Serve up static assets (usually on heroku)
  if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// Twilio Routes
+require("./routes/twilioRoutes")(app);
+
 // Send every request to the React app
 // Define any API routes before this runs
 require("./routes/apiRoutes.js")(app);
 // require("./routes/htmlRoutes.js")(app);    
-
 
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));

@@ -22,7 +22,7 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  streetAdress: {
+  streetAddress: {
     type: String,
     required: false,
     trim: true
@@ -51,13 +51,6 @@ const UserSchema = new Schema({
       // Store ObjectIds in the array
       type: Schema.Types.ObjectId,
       ref: "Location"
-    }
-  ],
-  customers: [
-    {
-      // Store ObjectIds in the array
-      type: Schema.Types.ObjectId,
-      ref: "Customer"
     }
   ]
 });
