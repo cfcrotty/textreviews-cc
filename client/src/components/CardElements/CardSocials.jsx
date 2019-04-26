@@ -1,10 +1,11 @@
-import React from "react";
+import React,{Component} from "react";
 // used for making the prop types of this component
 import PropTypes from "prop-types";
 
-import { Button } from "components";
+//import { Button } from "reactstrap";
+import Button from "./../CustomButton/CustomButton.jsx";
 
-class CardSocials extends React.Component {
+class CardSocials extends Component {
   render() {
     return (
       <div className="button-container">
