@@ -16,6 +16,7 @@ class Signup extends Component {
   }
 
   handleFormSubmit = event => {
+    console.log(this.state);
     event.preventDefault();
     API.signUpUser(this.state.username, this.state.email, this.state.password,
                   this.state.address, this.state.city, this.state.state, this.state.zip)
@@ -64,7 +65,7 @@ class Signup extends Component {
                    placeholder="Password goes here..."
                    name="password"
                    type="password"
-                   id="pwd"
+                   id="password"
                    onChange={this.handleChange}/>
           </div>
 

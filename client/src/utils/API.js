@@ -9,8 +9,8 @@ export default {
   },
   // sign up a user to our service
   signUpUser: (username, email, password, street, city, state, zip) => {
-    return axios.post('api/signup', {username: username, email: email, password: password, street: street,
-    city: city, state:state, zip:zip } );
+    return axios.post('api/signup', {username: username, email: email, password: password, streetAddress: street,
+    city: city, state:state, zipCode:zip } );
   },
 
   
