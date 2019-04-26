@@ -1,14 +1,18 @@
-import React from "react";
+import React,{Component} from "react";
 import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 
-import { PanelHeader, FormInputs, CardAuthor, CardSocials } from "react";
+//import { PanelHeader, FormInputs, CardAuthor, CardSocials } from "react";
+import PanelHeader from './../../components/PanelHeader/PanelHeader.jsx';
+import FormInputs from './../../components/FormInputs/FormInputs.jsx';
+import CardAuthor from './../../components/CardElements/CardAuthor.jsx';
+import CardSocials from './../../components/CardElements/CardSocials.jsx';
 
 import userBackground from "../../assets/img/bg5.jpg";
 import userAvatar from "../../assets/img/mike.jpg";
 
 import API from '../../utils/API';
 
-class User extends React.Component {
+class User extends Component {
   state = {
     username: "",
     email: ""

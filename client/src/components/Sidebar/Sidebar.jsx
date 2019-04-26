@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Component} from "react";
 import { NavLink } from "react-router-dom";
 import { Nav } from "reactstrap";
 // javascript plugin used to create scrollbars on windows
@@ -10,7 +10,7 @@ import AuthService from '../AuthService';
 
 var ps;
 
-class Sidebar extends React.Component {
+class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.activeRoute.bind(this);

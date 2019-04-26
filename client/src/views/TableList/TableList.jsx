@@ -9,7 +9,8 @@ import {
   Col
 } from "reactstrap";
 
-import { PanelHeader } from "react";
+//import { PanelHeader } from "react";
+import PanelHeader from './../../components/PanelHeader/PanelHeader.jsx';
 
 import { thead, tbody } from "../../variables/general";
 

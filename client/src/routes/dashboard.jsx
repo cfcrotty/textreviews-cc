@@ -1,6 +1,6 @@
-import Dashboard from "../views/Dashboard/Dashboard.jsx";
-import TableList from "../views/TableList/TableList.jsx";
-import UserPage from "../views/UserPage/UserPage.jsx";
+import Dashboard from "./../views/Dashboard/Dashboard.jsx";
+import TableList from "./../views/TableList/TableList.jsx";
+import UserPage from "./../views/UserPage/UserPage.jsx";
 
 var dashRoutes = [
   {

@@ -17,7 +17,11 @@ import {
 import { Line, Bar } from "react-chartjs-2";
 // function that returns a color based on an interval of numbers
 
-import { PanelHeader, Stats, CardCategory, Tasks } from "react";
+//import { PanelHeader, Stats, CardCategory, Tasks } from "react";
+import PanelHeader from './../../components/PanelHeader/PanelHeader.jsx';
+import Stats from './../../components/Stats/Stats.jsx';
+import CardCategory from './../../components/CardElements/CardCategory.jsx';
+import Tasks from './../../components/Tasks/Tasks.jsx';
 
 import {
   dashboardPanelChart,

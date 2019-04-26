@@ -1,17 +1,21 @@
-import React from "react";
+import React, {Component} from "react";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import { Header, Footer, Sidebar } from "react";
+//import { Header, Footer, Sidebar } from "react";
 
 import dashboardRoutes from "./../../routes/dashboard.jsx";
 
 import withAuth from './../../components/withAuth';
 
+import Sidebar from './../../components/Sidebar/Sidebar.jsx';
+import Header from './../../components/Header/Header.jsx';
+import Footer from './../../components/Footer/Footer.jsx';
+
 var ps;
 
-class Dashboard extends React.Component {
+class Dashboard extends Component {
   componentDidMount() {
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(this.refs.mainPanel);
@@ -43,7 +47,7 @@ class Dashboard extends React.Component {
                   return (
                     <Route 
                       path={prop2.path+{...this.props}}
-                      render={()=><prop2.component {...this.props} />}
+                      component={()=><prop2.component {...this.props} />}
                       key={key2}
                     />
                   );
@@ -52,7 +56,7 @@ class Dashboard extends React.Component {
               if (prop.redirect)
                 return <Redirect from={prop.path} to={prop.pathTo} key={key} />;
               return (
-                <Route path={prop.path} render={()=><prop.component {...this.props} />} key={key} {...this.props} isAuthed={true}/>
+                <Route path={prop.path} component={()=><prop.component {...this.props} />} key={key} {...this.props}/>
               );
             })}
           </Switch>
