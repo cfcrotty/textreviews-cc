@@ -1,54 +1,30 @@
-
-// Each user can have multiple locations they are tracking for text reviews
-// This page allows users to add those locations to the system
-
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import AuthService from './../components/AuthService';
-import withAuth from './../components/withAuth';
 import API from './../utils/API';
-import Location from './../utils/Location';
 
 import Sidebar from './../components/Sidebar/Sidebar.jsx';
 import dashboardRoutes from "./../dashboard/routes/dashboard.jsx";
 import Header from './../components/Header/Header.jsx';
 
-class AddLocation extends Component {
-
-    state = {
-        locationName:   "",
-        street:         "",
-        city:           "",
-        state:          "",
-        zip:            "",
-        phonenumber:    "",
-        userid:         ""
-      };
-    
-
+class EditUser extends Component {
   constructor() {
     super();
     this.Auth = new AuthService();
   }
 
+  componentWillMount() {
+    // if (this.Auth.loggedIn()) {
+    //   this.props.history.replace('/');
+    // }
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
-
-     // addLocation : (locationName, street, city, state, zip, phonenumber, userid) 
-    var newLocation = new Location({    
-                                "locationName"  :       this.state.locationName, 
-                                "street"        :       this.state.street, 
-                                "city"          :       this.state.city, 
-                                "state"         :       this.state.state, 
-                                "zip"           :       this.state.zip,
-                                "phonenumber"   :       this.state.phonenumber,
-                                "userid"        :       this.props.user.id
-                            });
-
-    API.addLocation(newLocation)
+    API.udpateUser(this.state.username, this.state.email, this.state.password,
+                  this.state.street, this.state.city, this.state.state, this.state.zip)
       .then(res => {
-        // once the user has added a location send them to the profile page
+        // once the user has signed up
+        // send them to the login page
         this.props.history.replace('/profile');
       })
       .catch(err => alert(err));
@@ -70,26 +46,36 @@ class AddLocation extends Component {
         <hr />
       <div className="container">
 
-        <h1>Add Location</h1>
+        <h1>Edit User</h1>
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-group">
-            <label htmlFor="locationName">Location Name:</label>
+            <label htmlFor="username">Username:</label>
             <input className="form-control"
-                   placeholder="Location name goes here..."
-                   name="locationName"
+                   placeholder="Username goes here..."
+                   name="username"
                    type="text"
-                   id="locationName"
+                   id="username"
                    onChange={this.handleChange}/>
           </div>
           <div className="form-group">
-            <label htmlFor="phonenumber">Phone number:</label>
+            <label htmlFor="email">Email address:</label>
             <input className="form-control"
-                   placeholder="Texting phone number of location goes here..."
-                   name="phonenumber"
-                   type="text"
-                   id="phonenumber"
+                   placeholder="Email goes here..."
+                   name="email"
+                   type="email"
+                   id="email"
                    onChange={this.handleChange}/>
           </div>
+          <div className="form-group">
+            <label htmlFor="pwd">Password:</label>
+            <input className="form-control"
+                   placeholder="Password goes here..."
+                   name="password"
+                   type="password"
+                   id="password"
+                   onChange={this.handleChange}/>
+          </div>
+
           <div className="form-group">
             <label htmlFor="street">Street Address:</label>
             <input className="form-control"
@@ -136,4 +122,4 @@ class AddLocation extends Component {
   }
 }
 
-export default withAuth(AddLocation);
+export default EditUser;

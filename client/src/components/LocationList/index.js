@@ -1,74 +1,162 @@
 // Location List component shows all location for a given user
 // in a list and shows edit and delete buttons for each one
 
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import AuthService from '../AuthService';
-import API from '../../utils/API';
+
+// Load React and ReactTable
+import React, { Component } from "react";
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
+import { Link } from 'react-router-dom';
+// import { checkPropTypes } from 'prop-types';
+
+import API from './../../utils/API';
+
+// Load the cut symbol from react-icons
+import { MdClear, MdCreate } from 'react-icons/md';
+
+// import { set } from "mongoose";
 
 
-// function LList(props) {
-
-//   return(
-//     <div className="jumbotron">
-//       <h1>List of locations  </h1>   
-//     </div>   
-//   )
-// }))
-
-// export default LList
-
+    
+  // SELF-CONTAINED COMPONENT FOR MANAGING LOCATION 
+  // ------------------------------------------------------------------------------------
 class LocationList extends Component {
+    
+    // When the component mounts, load all books and save them to this.state.books
+    componentDidMount() {
+      this.loadLocations();
+    }
 
+    // LOAD LOCATIONS FROM ROUTE IN API 
+    // ------------------------------------------------------------------------------------
+    loadLocations = () => {
+        API.getLocations(this.props.userid)
+          .then(res => this.setState({ locations:  res.data.locations  }) )
+          .catch(err => console.log(err))
+      };
 
-  state = {
-    locationList: [{ locationName : "Store #1",
-                     street : "University Ave.",
-                     city   : " San Diego"},
-                  {  locationName : "Store #2",
-                     street : "Lombard St.",
-                     city   : " San Francisco"},
-                  {  locationName : "Store #3",
-                     street : "Denny Way",
-                     city   : " Seattle"} 
-                ]};
-                  
-
-  // componentDidMount() {
-  //   API
-  //       .getAllLocations()
-  //       .then(response => this.setState({ locationList: response.data }))
-  //       .catch(err => console.log(err));
-  //   }
-
-
-    render() {
-        return (
-
-          <div className="jumbotron">
-
-             <table className="table">
-                    <thead>
-                        <tr>
-                            <th>Location name</th>
-                            <th>Street</th>
-                            <th>City</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.locationList.map(loc => (
-                            <tr key={loc.name}>
-                                <td>{loc.locationName}</td>
-                                <td>{loc.street}</td>
-                                <td>{loc.city}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-              </table>
-
-          </div>
-        );
+    // SET STATE 
+    // ------------------------------------------------------------------------------------
+    state = {
+        columns: [{
+          Header: 'Location Name',
+          accessor: 'locationName',
+          maxWidth: 250,
+          style: { textAlign: 'left' },
+          headerStyle: { textAlign: 'left' },
+          // Cell: this.renderEditable
+    
+        },
+        {
+          Header: 'Phone Number',
+          accessor: 'phonenumber',
+          Cell: row => <span>{this.formatPhoneNumber(row.value)}</span>,
+          maxWidth: 120,
+          style: { textAlign: 'left' },
+          headerStyle: { textAlign: 'left' }
+    
+        },
+        {
+          Header: 'Street',
+          accessor: 'street',
+          maxWidth: 360,
+          style: { textAlign: 'left' },
+          headerStyle: { textAlign: 'left' },
+        },
+        {
+          Header: 'City',
+          accessor: 'city',
+          maxWidth: 300,
+          style: { textAlign: 'left' },
+          headerStyle: { textAlign: 'left' }
+        },
+        {
+          Header: 'State',
+          accessor: 'state',
+          style: { textAlign: 'left' },
+          headerStyle: { textAlign: 'left' },
+          maxWidth: 60,
+        },
+        {
+          Header: 'Zip',
+          accessor: 'zip',
+          style: { textAlign: 'left' },
+          headerStyle: { textAlign: 'left' },
+          maxWidth: 120,
+        },
+        {
+          Header: '',
+          maxWidth: 60,
+          Cell: row => (
+              <div>
+                 <Link to={{
+                              pathname: '/editlocation',
+                              state: {
+                                row: row.original,
+                                id: row._id
+                              }
+                            }}><MdCreate /></Link>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                 <span onClick={() => this.handleDelete(row.original)}><MdClear /></span>            
+              </div>
+          )
+       }
+    
+        ]
+        ,
+        data: [],
+        loadingText: false
       }
-}
+    
+      
+          
+      // DELETE A LOCATION 
+      // ------------------------------------------------------------------------------------
+      handleDelete = (row) => {
+        API.deleteLocation(row._id, row.userid)
+        .then(res => this.loadLocations())   // once the user has deleted a location reload the state
+        .catch(err => alert(err));
+      }
 
-export default LocationList;
+    
+      // FORMAT PHONE NUMBER 
+      // ------------------------------------------------------------------------------------
+     formatPhoneNumber(phoneNumberString) {
+        var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+        var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
+        if (match) {
+          var intlCode = (match[1] ? '+1 ' : '')
+          return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('')
+        }
+        return null
+      }
+    
+    
+      // RENDER 
+      // ------------------------------------------------------------------------------------      
+      render() {
+        return (
+          <ReactTable
+            data={this.state.locations}
+            columns={this.state.columns}
+            sortable={true}
+            multiSort={true}
+            resizable={true}
+
+            loading={this.state.loading}
+            loadingText={'Loading...'}
+            noDataText={'No rows found'}
+            defaultSorted={[
+              {
+                id: "locationName",
+                desc: true
+              }]}
+            defaultPageSize={10}
+            className="-striped -highlight"
+          />
+        )
+      }
+    }
+    
+    export default LocationList;
+    

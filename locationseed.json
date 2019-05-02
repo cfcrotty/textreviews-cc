@@ -1,0 +1,46 @@
+{ "locations" : [
+        {
+
+            "locationName" : "Store #17 Chicago",
+            "phonenumber" : "312-897-3343",
+            "street" : "2026 Michigan Ave",
+            "city" : "Chicago",
+            "state" : "IL",
+            "zip" : "60007"
+
+        },
+        {
+
+            "locationName" : "Store #23 Newport Beach",
+            "phonenumber" : "714-321-9943",
+            "street" : "3389 MacArthur Blvd",
+            "city" : "Newport Beach",
+            "state" : "CA",
+            "zip" : "92028"
+
+        },
+        {
+
+            "locationName" : "Store #1",
+            "phonenumber" : "212 884-3836",
+            "street" : "55 Park Ave",
+            "city" : "New York",
+            "state" : "NY",
+            "zip" : "10022"
+
+        }
+        ,
+        {
+
+            "locationName" : "Store #18",
+            "phonenumber" : "913-780-6366",
+            "street" : "333 Wyandotte St",
+            "city" : "Kansas City",
+            "state" : "MO",
+            "zip" : "64102"
+
+        }
+    ]
+}
+
+    

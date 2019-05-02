@@ -10,7 +10,7 @@ class App extends Component {
 
   handleLogout = () => {
     Auth.logout();
-    this.props.history.replace('/signup');
+    this.props.history.replace('/login');
   };
 
   goToEditProfile = () => {
@@ -18,7 +18,7 @@ class App extends Component {
   };
 
   render() {
-    console.log(process.env.REACT_APP_SECRET_CODE);
+    //console.log(process.env.REACT_APP_SECRET_CODE);
     return (
       <div className="App">
         <div className="App-header">

@@ -4,7 +4,7 @@ import { Nav } from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 
-import logo from "../../logo-white.svg";
+import logo from "../../assets/img/TXTreviews_logo.png";
 
 import AuthService from '../AuthService';
 
@@ -36,20 +36,12 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar" data-color="blue">
-        <div className="logo">
-          <a
-            href="https://www.github.com"
-            className="simple-text logo-mini"
-          >
-            <div className="logo-img">
-              <img src={logo} alt="react-logo" />
+      
+        <div className="logo" >
+          <a href="/dashboard">
+            <div style={{paddingLeft: '30px'}}>
+              <img src={logo} style={{width: '150px'}} alt="TXTreviews-logo" />
             </div>
-          </a>
-          <a
-            href="https://www.github.com"
-            className="simple-text logo-normal"
-          >
-            Dashboard
           </a>
         </div>
         <div className="sidebar-wrapper" ref="sidebar">

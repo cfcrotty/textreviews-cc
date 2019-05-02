@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+var ObjectId = require('mongodb').ObjectID
 
 const LocationSchema = new Schema({
-  streetAddress: {
+  locationName: {
+    type: String,
+    required: false,
+    trim: true
+  },  
+    street: {
     type: String,
     required: false,
     trim: true
@@ -11,13 +17,13 @@ const LocationSchema = new Schema({
     type: String,
     required: false,
     trim: true
-  },
+  }, 
   state: {
     type: String,
     required: false,
     trim: true
   },
-  zipCode: {
+  zip: {
     type: String,
     required: false,
     trim: true
@@ -26,6 +32,9 @@ const LocationSchema = new Schema({
     type: String,
     required: true,
     trim: true
+  },
+  userid: {
+    type: ObjectId.ObjectID
   }
 });
 

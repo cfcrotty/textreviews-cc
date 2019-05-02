@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const TextSchema = new Schema({
     //The number of the consumer texting us
-    customerNumber: {
+    customerPhonenumber: {
         type: String,
         required: true,
         trim: true
@@ -53,10 +53,13 @@ const TextSchema = new Schema({
             } else return false;
         }
     },
+    userComment : {
+        type: String,
+        required: false,
+    },
     //The ID of the client this review is for.
-    client_id:
+    userid:
         {
-          // Store ObjectIds in the array
           type: Schema.Types.ObjectId
         },
     //The time the message was initially added to the database.
@@ -65,17 +68,6 @@ const TextSchema = new Schema({
         required: true,
         default: Date.now
     }
-    //,
-    // state: {     //This is whether the text is 1) initial, 2) Location, 3) review, 4) comment
-    //     type: String,
-    //     required: true,
-    //     trim: true
-    // },
-    // valid: {     //This is whether the text is 1) initial, 2) Location, 3) review, 4) comment
-    //     type: Boolean,
-    //     required: true,
-    //     default: false
-    // }
 });
 
 

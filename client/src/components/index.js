@@ -18,9 +18,9 @@ import PanelHeader from './PanelHeader/PanelHeader';
 
 import Sidebar from './Sidebar/Sidebar';
 
-import Stats from './Stats/Stats';
+// import Stats from './Stats/Stats';
 
-import Tasks from './Tasks/Tasks';
+// import Tasks from './Tasks/Tasks';
 
 export {
     // CardElements
@@ -43,8 +43,8 @@ export {
     PanelHeader,
     // Sidebar
     Sidebar,
-    // Stats
-    Stats,
-    // Tasks
-    Tasks,
+    // // Stats
+    // Stats,
+    // // Tasks
+    // Tasks,
 };
