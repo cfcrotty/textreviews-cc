@@ -80,7 +80,7 @@ class EditLocation extends Component {
         <hr />
       <div className="container">
 
-        <h1>Edit Location</h1>
+        <h4>Edit Location</h4>
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-group">
             <label htmlFor="locationName">Location Name:</label>

@@ -37,11 +37,10 @@ export default {
   // EDIT USER (BASED ON SIGNUP PAGE)
   // -----------------------------------------------------------------------------------------
   // app.post('/api/updateuser', (req, res) => {
-  updateUser : (id, username, email, password,street, city, state, zip) => {
+  updateUser : (id, username, email, street, city, state, zip) => {
     return axios.post(`api/updateuser/${id}`, {
       username: username,
       email: email,
-      password: password,
       street: street,
       city: city,
       state: state,

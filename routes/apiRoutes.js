@@ -31,7 +31,11 @@ module.exports = app => {
   // Any route with isAuthenticated is protected and you need a valid token
   // to access
   app.get('/api/textDetail/', isAuthenticated, (req, res) => {
-    db.Text.find({ userid: req.user.id })
+    db.Text.find(
+      { userid: req.user.id,
+        reviewValid: true,
+        reviewComplete: true
+      })
       .then(data => {
         // console.log(data)
         res.json(data);
@@ -60,9 +64,9 @@ module.exports = app => {
     if (req.body.passcode === 'sasparilla') {
       let user =
       {
-        username: 'vernsair',
-        email: 'bturksub@gmail.com',
-        password: 'password',
+        username: 'demoguy',
+        email: 'demouser@demo.com',
+        password: '12345',
         streetaddress: '123 West Elm Ln',
         city: 'San Diego',
         state: 'CA',
@@ -112,7 +116,7 @@ module.exports = app => {
 
 
       db.User.findOne({
-        email: 'bturksub@gmail.com'
+        email: 'demouser@demo.com'
       })
         .then(async data => {
 
@@ -183,13 +187,20 @@ module.exports = app => {
 
                 var location = item
                 var x = 0;
-                for (x = 0; x < 200; x++) {
+                for (x = 0; x < 500; x++) {
                   //pick random location
+
+                  //Randomly decide if the review is valid
+                  var isInvalidNum = Math.floor(Math.random() * 50) + 1
+                  var reviewValid = true
+                  if (isInvalidNum === 50) {
+                    reviewValid = false
+                  }
 
                   var customer = numbers[Math.floor(Math.random() * numbers.length)]
                   var rating = Math.floor(Math.random() * 10) + 1
 
-                  var firstDay = moment().subtract(31, 'days')
+                  var firstDay = moment().subtract(181, 'days')
                   var lastDay = moment().subtract(1, 'days')
                   var daysBetween = lastDay.diff(firstDay, 'days')
 
@@ -222,7 +233,7 @@ module.exports = app => {
                       timeStamp: secondTime.format()
                     }],
                     reviewComplete: true,
-                    reviewValid: true,
+                    reviewValid: reviewValid,
                     rating: rating,
                     userComment: comment,
                     userid: id,

@@ -12,15 +12,33 @@ class EditUser extends Component {
     this.Auth = new AuthService();
   }
 
-  componentWillMount() {
-    // if (this.Auth.loggedIn()) {
-    //   this.props.history.replace('/');
-    // }
-  }
+  state = {
+    username:       "",
+    email:          "",
+    street:         "",
+    city:           "",
+    state:          "",
+    zip:            ""
+  };
+
+
+
+  componentDidMount() {
+    
+    this.setState({
+        username:   this.props.location.state.username,
+        email:      this.props.location.state.email,
+        street:     this.props.location.state.street,
+        city:       this.props.location.state.city,
+        state:      this.props.location.state.state,
+        zip:        this.props.location.state.zip
+      })
+  };
+
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.udpateUser(this.state.username, this.state.email, this.state.password,
+    API.updateUser(this.props.location.state.userid, this.state.username, this.state.email, 
                   this.state.street, this.state.city, this.state.state, this.state.zip)
       .then(res => {
         // once the user has signed up
@@ -30,12 +48,15 @@ class EditUser extends Component {
       .catch(err => alert(err));
   };
 
+
+
   handleChange = event => {
     const {name, value} = event.target;
     this.setState({
       [name]: value
     });
   };
+
 
   render() {
     return (
@@ -46,12 +67,13 @@ class EditUser extends Component {
         <hr />
       <div className="container">
 
-        <h1>Edit User</h1>
+        <h4>Edit User</h4>
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username:</label>
             <input className="form-control"
                    placeholder="Username goes here..."
+                   defaultValue={this.state.username}
                    name="username"
                    type="text"
                    id="username"
@@ -61,25 +83,17 @@ class EditUser extends Component {
             <label htmlFor="email">Email address:</label>
             <input className="form-control"
                    placeholder="Email goes here..."
+                   defaultValue={this.state.email}
                    name="email"
                    type="email"
                    id="email"
                    onChange={this.handleChange}/>
           </div>
           <div className="form-group">
-            <label htmlFor="pwd">Password:</label>
-            <input className="form-control"
-                   placeholder="Password goes here..."
-                   name="password"
-                   type="password"
-                   id="password"
-                   onChange={this.handleChange}/>
-          </div>
-
-          <div className="form-group">
             <label htmlFor="street">Street Address:</label>
             <input className="form-control"
                    placeholder="Street goes here..."
+                   defaultValue={this.state.street}
                    name="street"
                    type="text"
                    id="street"
@@ -89,6 +103,7 @@ class EditUser extends Component {
             <label htmlFor="city">City:</label>
             <input className="form-control"
                    placeholder="City goes here..."
+                   defaultValue={this.state.city}
                    name="city"
                    type="text"
                    id="city"
@@ -98,6 +113,7 @@ class EditUser extends Component {
             <label htmlFor="state">State:</label>
             <input className="form-control"
                    placeholder="State goes here..."
+                   defaultValue={this.state.state}
                    name="state"
                    type="text"
                    id="state"
@@ -107,6 +123,7 @@ class EditUser extends Component {
             <label htmlFor="zip">Zip Code:</label>
             <input className="form-control"
                    placeholder="Zip code goes here..."
+                   defaultValue={this.state.zip}
                    name="zip"
                    type="text"
                    id="zip"

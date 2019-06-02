@@ -154,10 +154,12 @@ module.exports = app => {
                         {
                             month: { $month: "$createdAt" },
                             year: { $year: "$createdAt" },
-                            day: { $dayOfMonth: "$createdAt" }
+                            day: { $dayOfMonth: "$createdAt" },
                         },
                         aveRating: { $avg: "$rating" },
-                    }
+                        sum: {$sum:1}
+                    },
+                    
                 },
                 {
                     $sort: {

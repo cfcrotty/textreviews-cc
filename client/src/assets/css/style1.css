@@ -1,0 +1,731 @@
+/* --------------------------------------------------
+Global Style
+-------------------------------------------------- */
+body { color: #5a5a5a; }
+
+.caret {
+  border-top: 6px dashed;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  margin: -3px 0 0 4px;
+}
+
+.btn {
+  border: none;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  padding: 6px 12px;
+}
+
+.btn-primary {
+  background-color: #fa5b3d;
+  text-transform: uppercase;
+  font: 14px "function_prolight", Arial, sans-serif;
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: #fa5b3d;
+  text-decoration: underline;
+  color: #fff !important;
+}
+  .btn-primary:active:focus {
+    color: #fff;
+    background-color: #E9300E;
+    border-color: #B22005;
+  }
+
+.btn-primary.focus, .btn-primary:focus {
+  color: #fff;
+  background-color: #E9300E;
+  border-color: #B22005;
+}
+
+.btn-primary.disabled.focus, .btn-primary.disabled:focus,
+.btn-primary.disabled:hover, .btn-primary[disabled].focus,
+.btn-primary[disabled]:focus, .btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:focus,
+fieldset[disabled] .btn-primary:hover {
+  background-color: #ff9e8c;
+  cursor: default;
+  border-color: #ff9e8c;
+}
+
+.btn-dark {
+  background-color: dodgerblue;
+  color: #fff;
+  text-transform: uppercase;
+  font: 14px "function_prolight", Arial, sans-serif;
+}
+
+.btn-dark:hover {
+  background-color: #000;
+  text-decoration: underline;
+  color: #fff !important;
+}
+
+a { color: #fa5b3D; }
+
+h1,
+h2 {
+  font: 1.75em "CaslonTwoTwentyFour-Book", Times New Roman, serif;
+  color: #000;
+}
+
+h2 {
+  font: 1.65em "FuturaPTBook-Reg", Times New Roman, serif;
+  text-align: center;
+  margin: 5px 0 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+hr { border-bottom: 2px solid #eee; }
+
+#copy { min-height: 600px; }
+
+.form-control:focus {
+  border-color: #2A809C;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/* --------------------------------------------------
+Navbar Style
+-------------------------------------------------- */
+
+.navbar {
+  margin-bottom: 0;
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav { margin: 0 -15px; }
+
+.navbar-default {
+  background-color: #fafafa;
+  color: #68655f;
+  padding-bottom: 5px;
+}
+
+/* .navbar-toggle { margin-top: 15px; } */
+
+.navbar-default .navbar-collapse {
+  margin-top: 5px;
+  border-top: 2px solid #e5e5e5;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav li.dropdown a {
+  font: 14px "FuturaPTBook-Reg", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #777;
+}
+
+.navbar-default .navbar-nav li.dropdown.shop ul.dropdown-menu { padding: 0; }
+
+.navbar-default .navbar-nav li.dropdown.shop a {
+  padding-top: 8px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.navbar-default .navbar-nav li.dropdown.shop a.dropdown-toggle {
+  color: #fa5b3d;
+  font-family: "FuturaPTBold-Reg", Arial, sans-serif;
+  padding-top: 15px;
+  border-bottom: none;
+}
+
+.navbar-default .navbar-nav li.dropdown.shop.open a.dropdown-toggle { padding-bottom: 15px; }
+
+.navbar-default .navbar-nav.navbar-right > li > a,
+.navbar-default .navbar-nav.navbar-right li.dropdown a { text-transform: none; }
+
+.navbar-default .navbar-right li.contact,
+.navbar-default .navbar-right li.login { border-right: 1px solid #ddd; }
+
+.nav.navbar-right li.cart span {
+  color: #fa5b3d;
+  font-family: "FuturaPTBold-Reg", Arial, sans-serif;
+}
+
+/* --------------------------------------------------
+Carousel Style
+-------------------------------------------------- */
+
+.carousel {
+  overflow: hidden;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.carousel .btn {
+  /* height: 35px; */
+  width: 50%;
+  display: inline-block;
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.carousel-inner > .item > .container { margin-top: -10px; }
+
+.carousel-indicators { bottom: 10px; }
+
+.carousel-control.right,
+.carousel-control.left { background-image: none; }
+
+.carousel-control:focus,
+.carousel-control:hover { color: #fff !important; }
+
+.carousel-inner > .item > .slide {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 23px 15px 8px 11px;
+  width: 100%;
+  height: 220px;
+  background-position: -100px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carousel-caption {
+  z-index: 10;
+  padding-top: 40px;
+  left: 13%;
+  right: 13%;
+}
+
+.carousel-caption.carousel-right { top: -3%; }
+
+.carousel-caption.carousel-left,
+.carousel-caption.carousel-center { top: -7%; }
+
+.carousel-caption h1 {
+  font-family: "CaslonTwoTwentyFour-Bold", Times New Roman, serif;
+  text-transform: uppercase;
+  color: black;
+  text-shadow: 5px 0px 12px rgba(255, 255, 255, 1);
+  letter-spacing: 1px;
+  font-size: 26px;
+  line-height: 1em;
+}
+
+.carousel-caption p {
+  font: 1.2em "FuturaPTBook-Reg", Arial, sans-serif;
+  text-shadow: none;
+  color: whitesmoke;
+  letter-spacing: 1px;
+  margin: 10px 0 13px;
+}
+
+/* --------------------------------------------------
+Home Page Product Style
+-------------------------------------------------- */
+
+.home-prods { text-align: center; }
+
+.home-prods a:hover span { color: #fa5b3d; }
+
+.home-prods img {
+  max-height: 100%;  
+  max-width: 100%; 
+  width: auto;
+  height: auto;
+  position: absolute;  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  margin: auto;
+}
+
+.home-prods span {
+  display: inline-block;
+  width: 100%;
+}
+
+.home-prods span.prod-title {
+  font: 14px "FuturaPTBold-Reg", Arial, sans-serif;
+  color: #000;
+  padding: 5px 0 7px;
+}
+
+.home-prods span.prod-price {
+  font: 13px "FuturaPTBook-Reg", Arial, sans-serif;
+  color: #000;
+  margin-top: -5px;
+}
+
+.home-prods span.prod-buy {
+  font: 14px "FuturaPTBook-Reg", Arial, sans-serif;
+  color: #fa5b3d;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.home-prods a:hover span.prod-buy {
+  text-decoration: underline;
+}
+
+.home-prods .highlight-img-holder {
+  height: 133px;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative
+}
+  /* --------------------------------------------------
+Home Page Ad Space Style
+-------------------------------------------------- */
+.bottom-quad hr {
+  display: none;
+}
+
+.bottom-quad a {
+  color: #000;
+  border-bottom: 3px solid #eee;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+  .bottom-quad a:hover {
+    color: #fa5b3d;
+  }
+
+.bottom-quad img,
+.bottom-quad span {
+  width: 100%;
+  display: inline-block;
+}
+
+.bottom-quad span.quad-title {
+  font: 14px "FuturaPTBold-Reg", Arial, sans-serif;
+  text-transform: uppercase;
+  margin: 9px 0 7px;
+  border-bottom: none;
+}
+
+.bottom-quad span.quad-content {
+  font: 18px "CaslonTwoTwentyFour-Book", Times New Roman, serif;
+  border-bottom: none;
+}
+
+.bottom-quad span.quad-link {
+  font: 13px "FuturaPTBook-Reg", Arial, sans-serif;
+  letter-spacing: 1px;
+  margin: 9px 0 7px;
+  border-bottom: none;
+}
+
+/* --------------------------------------------------
+Home Page Press Logo Style
+-------------------------------------------------- */
+
+.press-logos { overflow-x: hidden; }
+
+.press-logos .row { text-align: center; }
+
+.press-logos a {
+  width: 49%;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  padding-right: 10px;
+}
+
+.press-logos a img {
+  width: 80%;
+  opacity: 0.25;
+}
+
+.press-logos a:first-child img { width: 60%; }
+
+.press-logos a:hover img { opacity: 1; }
+
+/* --------------------------------------------------
+Footer Style
+-------------------------------------------------- */
+/* 
+footer {
+  font: 13px "FuturaPTBook-Reg", Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+*/
+footer p {
+  width: 100%;
+  text-align: center;
+  color: #747474;
+}
+
+footer p:first-child {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+footer a {
+  color: #747474;
+  text-transform: uppercase;
+}
+
+footer a:hover { color: #747474 !important; }
+
+footer .footer-links {
+  text-align: center;
+  padding-bottom: 40px;
+  margin-bottom: 35px;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  padding: 4px 0;
+  height: auto;
+}
+
+footer .footer-carousel { height: 115px; }
+
+footer .footer-carousel .carousel-indicators {
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+footer .carousel-inner > .item > img { margin: 15px auto 0; }
+
+footer .social-networks {
+  padding: 0;
+  margin: 25px 0 -25px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+}
+
+footer .social-networks li {
+  display: inline-block;
+  margin: 0 20px 14px 0;
+}
+
+footer .social-networks a {
+  display: inline-block;
+  width: 15px;
+  height: 30px;
+  text-indent: -9999px;
+  background: url(//dhw86y591bw6t.cloudfront.net/prod/hbw/images/global/sprite-3.png) no-repeat 0 -440px;
+}
+
+footer .social-networks .facebook {
+  width: 29px;
+  height: 28px;
+}
+
+footer .social-networks .facebook { background-position: 5px -440px; }
+
+footer .social-networks .facebook:hover { background-position: 5px -490px; }
+
+footer .social-networks .twitter {
+  width: 28px;
+  height: 24px;
+  background-position: -62px -446px;
+}
+
+footer .social-networks .twitter:hover { background-position: -62px -496px; }
+
+footer .social-networks .pinterest {
+  width: 29px;
+  height: 28px;
+  background-position: -145px -442px;
+}
+
+footer .social-networks .pinterest:hover { background-position: -145px -492px; }
+
+footer .social-networks .instagram {
+  width: 30px;
+  height: 29px;
+  background-position: -249px -441px;
+}
+
+footer .social-networks .instagram:hover { background-position: -249px -491px; }
+
+footer .copyright {
+  display: inline-block;
+  width: 100%;
+  margin-top: 35px;
+}
+
+footer #subscribe-form {
+  margin: 15px auto 0;
+  position: relative;
+  width: 100%;
+}
+
+footer #subscribe-form p {
+  font: 13px "FuturaPTBook-Reg", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+footer #subscribe-form input {
+  border: 0;
+  font: 12px "FuturaPTBook-Reg", Arial, Helvetica, sans-serif;
+  margin: 10px 0 0;
+  outline: 0;
+  vertical-align: top;
+}
+
+footer #subscribe-form #subscribe-form-email {
+  color: #b7b7b7;
+  padding: 0 10px;
+  height: 35px;
+  width: 75%;
+  font-size: 16px;
+}
+
+footer #subscribe-form-submit {
+  background-color: #fa5b3c;
+  color: #fff;
+  height: 35px;
+  width: 25%;
+} 
+
+.carousel-inner > .item > .slide {
+  background-image: url(../img/90181.jpg);
+  background-position-y: -450px;
+}
+
+/* --------------------------------------------------
+Responsive Style -- small
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Global */
+  h2 {
+    font-size: 1.85em;
+    margin-top: 0;
+  }
+
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand { margin: 0 10px 0 0; }
+
+  /* ---------- Responsive: Navbar ---------- */
+  .navbar-default { padding-bottom: 0; }
+
+  .navbar-default .navbar-collapse { border-top: 0; }
+
+  /* .navbar-wrapper .container { padding-top: 12px; } */
+
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+    height: 90px;
+    border-bottom: 2px solid #e5e5e5;
+  }
+
+  .navbar-collapse ul.navbar-nav { padding-top: 6px; }
+
+  .navbar-default .navbar-nav li.dropdown.shop a.dropdown-toggle { padding-top: 15px; }
+
+  .navbar-default .navbar-nav li:last-child a { border-bottom: none; }
+
+  .nav.navbar-right { margin-top: 14px; }
+
+  .nav.navbar-right > li > a {
+    padding: 0 10px;
+    letter-spacing: 0;
+  }
+
+  /* ---------- Responsive: Carousel ---------- */
+  .carousel {
+    margin: 0 0 20px;
+    height: 285px;
+  }
+
+  .carousel-caption {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    left: 15%;
+    right: 15%;
+  }
+
+  .carousel-caption h1 {
+    font-family: "CaslonTwoTwentyFour-Reg", Times New Roman, serif;
+    font-size: 2.75em;
+    line-height: normal;
+    margin-top: 5px;
+  }
+
+  .carousel-caption p {
+    font-size: 1.65em;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .carousel-inner > .item > .slide { 
+    height: 285px; 
+    background-position: top left;
+    background-position-y: -300px;}
+
+  .carousel-caption.carousel-right {
+    text-align: center;
+    width: 37%;
+    right: 20%;
+    left: 52%;
+    padding-bottom: 30px;
+    top: 10%;
+  }
+
+  .carousel-caption.carousel-left {
+    text-align: center;
+    width: 37%;
+    left: 12%;
+    padding-bottom: 30px;
+    top: 8%;
+  }
+
+  .carousel-caption.carousel-center {
+    top: 12%;
+    width: 37%;
+    left: 32%;
+    padding-bottom: 30px;
+  }
+
+  /* ---------- Responsive: Product Rows ---------- */
+  .home-prods .highlight-img-holder {
+    height: 323px;
+  }
+
+  /* ---------- Responsive: Ad Space ---------- */
+  .bottom-quad hr { display: block; }
+
+  .bottom-quad a {
+    border-bottom: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bottom-quad .col-md-3 {
+    border-right: 1px solid #ddd;
+    border-bottom: none;
+  }
+
+  .bottom-quad .col-md-3:last-child { border-right: 0; }
+
+  /* ---------- Responsive: Logos ---------- */
+  .press-logos { margin-bottom: 20px; }
+
+  .press-logos a {
+    width: 15%;
+    display: inline-block;
+    padding-right: 0;
+  }
+
+  .press-logos a img { width: 85%; }
+
+  .press-logos a:first-child img { width: 50%; }
+
+  /* ---------- Responsive: Footer ---------- */
+  footer .col-md-4,
+  footer .col-md-2 {
+    padding-top: 15px;
+  }
+
+  footer .col-md-3 { text-align: center; }
+
+  footer .col-md-3:nth-child(4) { border-right: none; }
+
+  footer .footer-links {
+    border-bottom: 1px solid #747474;
+  }
+
+  footer p:first-child { margin-bottom: 5px; }
+
+  footer p:first-child a { width: 25%; }
+
+  footer .carousel-inner > .item > img { margin-top: 0; }
+
+  footer ul { margin: 0; }
+
+  footer .social-networks {
+    width: 92%;
+    margin: 0;
+  }
+
+  footer #subscribe-form #subscribe-form-email {
+    font-size: 12px;
+  }
+}
+
+/* --------------------------------------------------
+Responsive Style -- small
+-------------------------------------------------- */
+
+@media (min-width: 992px) {
+  /* ---------- Responsive: Carousel ---------- */
+  .featurette-heading { margin-top: 120px; }
+
+  .carousel-inner > .item > .slide {
+    background-position: top left;
+    background-position-y: -450px;
+  }
+
+  /* ---------- Responsive: Product Rows ---------- */
+  .home-prods .highlight-img-holder {
+    height: 140px;
+    width: 140px;
+  }
+
+  /* ---------- Responsive: Footer ---------- */
+  footer .col-md-6,
+  footer .col-md-3 {
+    border-right: 1px solid #747474;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* ---------- Responsive: Footer ---------- */
+  footer .col-lg-4,
+  footer .col-lg-2 {
+    border-right: 1px solid #747474;
+  }
+  footer .footer-links {
+    border-bottom: none;
+    text-align: left;
+  }
+  .carousel-inner > .item > .slide {
+    background-position-y: -210px;
+  }
+  
+}
+
+@media (max-width: 1200px) {
+  .carousel-inner > .item > .slide {
+    background-position-y: -210px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .carousel-inner > .item > .slide {
+    background-position-y: -110px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-inner > .item > .slide {
+  background-position: top left;
+  background-position-y: -110px;
+  }
+}
+
+@media (max-width: 620px) {
+  .carousel-inner > .item > .slide {
+  background-position: top left;
+  background-position-y: -80px;
+  }
+}
+
+@media (max-width: 500px) {
+  .carousel-inner > .item > .slide {
+  background-position-y: -50px;
+  }
+}

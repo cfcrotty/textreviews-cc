@@ -57,7 +57,7 @@ class TwilioResponses extends Component {
                     <div style={{ marginBottom: "50px" }}><Header dashColor={"black"} {...this.props} /></div>
                     <hr />
                     <div className="container">
-                        <h3>Text Responses</h3>
+                        <h4>Text Responses</h4>
                         <Popup
                             trigger={<label style={styles.responseLabel} htmlFor="surResValid">Valid Survey Response: </label>}
                             position="right top"

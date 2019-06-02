@@ -18,10 +18,6 @@ import PanelHeader from './PanelHeader/PanelHeader';
 
 import Sidebar from './Sidebar/Sidebar';
 
-// import Stats from './Stats/Stats';
-
-// import Tasks from './Tasks/Tasks';
-
 export {
     // CardElements
     CardAuthor,
@@ -42,9 +38,5 @@ export {
     // PanelHeader
     PanelHeader,
     // Sidebar
-    Sidebar,
-    // // Stats
-    // Stats,
-    // // Tasks
-    // Tasks,
+    Sidebar
 };
