@@ -86,7 +86,7 @@ module.exports = app => {
           city: 'La Jolla',
           state: 'CA',
           zipCode: '92037',
-          phonenumber: '+16193044042'
+          phonenumber: '+12405466255'
         },
         {
           locationName: 'Atlantic',
