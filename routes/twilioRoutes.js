@@ -50,6 +50,7 @@ module.exports = app => {
         db.Text
             .find({ customerPhonenumber: req.body.From, reviewComplete: false })
             .then(dbText => {
+                console.log("In /api/twilio/sms ");
                 //Pulls the relevant customer responses from the cached array.
                 if (dbText.length > 0) {
                     let currentCustomer = customerResponses.filter(response => {
@@ -100,6 +101,7 @@ module.exports = app => {
                         .then(dbLocation => {
                             //Pulls the relevant customer responses from the cached array.
                             let currentCustomer = customerResponses.filter(response => {
+                                console.log(String(dbLocation.userid+" vs "+String(response.id)) );
                                 if (String(dbLocation.userid) === String(response.id)) {
                                     return true
                                 } else return false
@@ -135,7 +137,7 @@ module.exports = app => {
                         })
                         .catch(err => console.log(err));
                 }
-            })
+            }).catch(err => console.log(err));
 
     });
 
