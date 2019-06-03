@@ -15,7 +15,7 @@ module.exports = app => {
       .catch(err => res.status(400).json(err));
   });
 
-  app.post('/login', (req, res) => {
+  app.get('/login', (req, res) => {
     console.log(req);
     auth
       .logUserIn(req.query.email, req.query.password)
