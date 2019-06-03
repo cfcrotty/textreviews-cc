@@ -4,6 +4,7 @@ import './App.css';
 import './assets/css/style1.css';
 import AuthService from './components/AuthService';
 import withAuth from './components/withAuth';
+import { Link } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import logo1 from "./assets/img/TXTreviews_logo.png";
@@ -95,7 +96,7 @@ class App extends Component {
                   <div className="container">
                     <div className="carousel-caption carousel-center">
                       <h1>TXT Reviews</h1>
-                      <p><a className="btn btn-large btn-dark" href="/signup" role="button">Signup Now</a></p>
+                      <p><Link className="btn btn-large btn-dark" to="/signup" role="button">Signup Now</Link></p>
                     </div>
                   </div>
                 </div>
