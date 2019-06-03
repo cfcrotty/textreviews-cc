@@ -13,24 +13,24 @@ class Login extends Component {
     if (this.Auth.loggedIn()) {
       this.props.history.replace('/dashboard');
     }
-    const params = new URLSearchParams(this.props.location.search);
-    console.log(params+" === params");
-    if (params) {
-      const email = params.get('email');
-      const password = params.get('password');
-      console.log(email+" and "+password);
-      if (email && password) {
-        this.Auth.login(email, password)
-        .then(res => {
-          // once user is logged in
-          // take them to their profile page
-          this.props.history.replace(`/dashboard`);
-        })
-        .catch(err => {
-          alert(err.response.data.message)
-        });
-      }
-    }
+    // const params = new URLSearchParams(this.props.location.search);
+    // console.log(params+" === params");
+    // if (params) {
+    //   const email = params.get('email');
+    //   const password = params.get('password');
+    //   console.log(email+" and "+password);
+    //   if (email && password) {
+    //     this.Auth.login(email, password)
+    //     .then(res => {
+    //       // once user is logged in
+    //       // take them to their profile page
+    //       this.props.history.replace(`/dashboard`);
+    //     })
+    //     .catch(err => {
+    //       alert(err.response.data.message)
+    //     });
+    //   }
+    // }
   }
 
   handleFormSubmit = event => {
