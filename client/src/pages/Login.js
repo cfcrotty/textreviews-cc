@@ -14,9 +14,11 @@ class Login extends Component {
       this.props.history.replace('/dashboard');
     }
     const params = new URLSearchParams(this.props.location.search);
+    console.log(params+" === params");
     if (params) {
       const email = params.get('email');
       const password = params.get('password');
+      console.log(email+" and "+password);
       if (email && password) {
         this.Auth.login(email, password)
         .then(res => {
