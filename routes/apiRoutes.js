@@ -9,22 +9,11 @@ const ObjectId = require('mongoose').Types.ObjectId
 module.exports = app => {
 
   app.post('/api/login', (req, res) => {
-    console.log("hello");
-    console.log(req);
     auth
       .logUserIn(req.body.email, req.body.password)
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(400).json(err));
   });
-
-  // app.get('/api/login', (req, res) => {
-  //   console.log("hello");
-  //   console.log(req);
-  //   auth
-  //     .logUserIn(req.body.email, req.body.password)
-  //     .then(dbUser => res.json(dbUser))
-  //     .catch(err => res.status(400).json(err));
-  // });
 
   //I deleted because it is in userCreateRoutes.js - bmt
   // Any route with isAuthenticated is protected and you need a valid token
