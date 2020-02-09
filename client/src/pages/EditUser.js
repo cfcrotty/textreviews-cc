@@ -70,24 +70,26 @@ class EditUser extends Component {
         <h4>Edit User</h4>
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Username:</label>
-            <input className="form-control"
+            <label htmlFor="username">Username:</label> &nbsp;
+            {this.state.username}
+            {/* <input className="form-control"
                    placeholder="Username goes here..."
                    defaultValue={this.state.username}
                    name="username"
                    type="text"
                    id="username"
-                   onChange={this.handleChange}/>
+                   onChange={this.handleChange}/> */}
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email address:</label>
-            <input className="form-control"
+            <label htmlFor="email">Email address:</label> &nbsp;
+            {/* <input className="form-control"
                    placeholder="Email goes here..."
                    defaultValue={this.state.email}
                    name="email"
                    type="email"
                    id="email"
-                   onChange={this.handleChange}/>
+                   onChange={this.handleChange}/> */}
+            {this.state.email}
           </div>
           <div className="form-group">
             <label htmlFor="street">Street Address:</label>

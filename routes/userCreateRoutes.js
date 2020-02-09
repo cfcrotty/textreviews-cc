@@ -22,13 +22,14 @@ module.exports = app => {
         // ROUTE FOR UPDATING USER INFORMATION
         // -----------------------------------------------------------------------------------------
         app.post("/api/updateuser/:id", (req, res) => {       
-            db.User.update({ _id: req.params.id }, { $set : {   username: req.body.username,
-                                                                    email : req.body.email,
-                                                                    street : req.body.street,
-                                                                    city : req.body.city,
-                                                                    state : req.body.state,
-                                                                    zip : req.body.zip
-                                                                } }, { multi:true,  new: true })
+            db.User.update({ _id: req.params.id }, { $set : {   
+                // username: req.body.username,
+                // email : req.body.email,
+                street : req.body.street,
+                city : req.body.city,
+                state : req.body.state,
+                zip : req.body.zip
+            } }, { multi:true,  new: true })
             // db.Location.findOneAndUpdate({ _id: req.params.id }, {location: req.body} , { new: true })
             .then( (dbUser) => res.json(dbUser))
             .catch(err => {

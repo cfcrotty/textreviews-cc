@@ -42,7 +42,8 @@ class Login extends Component {
         <Navbar />
         <div className="container">
           <div className="col-8 offset-2">
-            <h1>Login</h1>
+            <div><h1 style={{display:"inline"}}>Login </h1><h6 style={{ display:"inline" }}>(User:</h6> demouser@demo.com, <h6 style={{ display:"inline" }}>Password:</h6> 12345)</div>
+            
             <form onSubmit={this.handleFormSubmit}>
               <div className="form-group">
                 <label htmlFor="email">Email address:</label>
