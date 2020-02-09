@@ -1,6 +1,9 @@
 {
   "name": "textreview",
   "version": "1.0.0",
+  "engines": {
+    "node": "13.1.0"
+  },
   "description": "Mern Demo",
   "main": "server.js",
   "scripts": {
