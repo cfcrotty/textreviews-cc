@@ -2,8 +2,7 @@
   "name": "textreview",
   "version": "1.0.0",
   "engines": {
-    "node": "12.15.0",
-    "npm": "6.13.4"
+    "node": "12.13.0"
   },
   "description": "Mern Demo",
   "main": "server.js",
